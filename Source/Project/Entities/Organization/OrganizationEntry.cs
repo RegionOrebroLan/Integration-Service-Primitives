@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using RegionOrebroLan.Integration.Service.Entities.Organization.Extensions;
 
 namespace RegionOrebroLan.Integration.Service.Entities.Organization
 {
@@ -47,6 +48,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		private IEnumerable<string> _hsaVpwInformation4;
 		private IEnumerable<string> _hsaVpwNeighbouringObject;
 		private IEnumerable<string> _initials;
+		private Lazy<OrganizationEntryKind?> _kind;
 		private IEnumerable<string> _l;
 		private IEnumerable<string> _labeledUri;
 		private IEnumerable<string> _mail;
@@ -164,6 +166,28 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		public virtual IEnumerable<string> HsaVpwInformation4 => this._hsaVpwInformation4 ??= this.GetValues(nameof(this.HsaVpwInformation4));
 		public virtual IEnumerable<string> HsaVpwNeighbouringObject => this._hsaVpwNeighbouringObject ??= this.GetValues(nameof(this.HsaVpwNeighbouringObject));
 		public virtual IEnumerable<string> Initials => this._initials ??= this.GetValues(nameof(this.Initials));
+
+		public virtual OrganizationEntryKind? Kind
+		{
+			get
+			{
+				this._kind ??= new Lazy<OrganizationEntryKind?>(() =>
+				{
+					foreach(var objectClass in this.ObjectClass)
+					{
+						var kind = OrganizationEntryKindExtension.FromObjectClass(objectClass);
+
+						if(kind != null)
+							return kind;
+					}
+
+					return null;
+				});
+
+				return this._kind.Value;
+			}
+		}
+
 		public virtual IEnumerable<string> L => this._l ??= this.GetValues(nameof(this.L));
 		public virtual IEnumerable<string> LabeledURI => this._labeledUri ??= this.GetValues(nameof(this.LabeledURI));
 		public virtual IEnumerable<string> Mail => this._mail ??= this.GetValues(nameof(this.Mail));

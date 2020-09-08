@@ -57,6 +57,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		IEnumerable<string> HsaVpwInformation4 { get; }
 		IEnumerable<string> HsaVpwNeighbouringObject { get; }
 		IEnumerable<string> Initials { get; }
+		OrganizationEntryKind? Kind { get; }
 
 		/// <summary>
 		/// Locality name

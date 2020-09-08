@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using RegionOrebroLan.Integration.Service.Entities.Organization;
 
 namespace RegionOrebroLan.Integration.Service.Queries.Organization
 {
@@ -56,6 +57,7 @@ namespace RegionOrebroLan.Integration.Service.Queries.Organization
 		public virtual IList<string> HsaVpwInformation4 { get; } = new List<string>();
 		public virtual IList<string> HsaVpwNeighbouringObject { get; } = new List<string>();
 		public virtual IList<string> Initials { get; } = new List<string>();
+		public virtual ISet<OrganizationEntryKind> Kind { get; } = new SortedSet<OrganizationEntryKind>();
 
 		/// <summary>
 		/// Locality name
