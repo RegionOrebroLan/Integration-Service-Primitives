@@ -3,6 +3,7 @@
 		<_VersionPrefix>0.0.0</_VersionPrefix>
 		<_VersionPrereleaseName>alpha</_VersionPrereleaseName>
 		<AssemblyName>RegionOrebroLan.Integration.Service.Primitives</AssemblyName>
+		<AssemblyOriginatorKeyFile>$(SolutionDir).Global\Signing\StrongName.snk</AssemblyOriginatorKeyFile>
 		<AssemblyVersion>$(_VersionPrefix).0</AssemblyVersion>
 		<Company>Region Örebro län</Company>
 		<Description>Common types for integraion-service and clients, $(Company).</Description>

@@ -1,1 +1,7 @@
-<Project />
+<Project>
+	<PropertyGroup>
+		<AssemblyOriginatorKeyFile>$(SolutionDir).Global\Signing\StrongName.Development.snk</AssemblyOriginatorKeyFile>
+		<DelaySign>false</DelaySign>
+		<SignAssembly>true</SignAssembly>
+	</PropertyGroup>
+</Project>
