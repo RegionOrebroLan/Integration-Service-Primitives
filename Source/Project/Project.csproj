@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<_VersionPrefix>0.0.0</_VersionPrefix>
+		<_VersionPrereleaseName>alpha</_VersionPrereleaseName>
+		<AssemblyName>RegionOrebroLan.Integration.Service.Primitives</AssemblyName>
+		<AssemblyVersion>$(_VersionPrefix).0</AssemblyVersion>
+		<Company>Region Örebro län</Company>
+		<Description>Common types for integraion-service and clients, $(Company).</Description>
+		<FileVersion>$(_VersionPrefix).0</FileVersion>
+		<LangVersion>Latest</LangVersion>
+		<RootNamespace>RegionOrebroLan.Integration.Service</RootNamespace>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Version>$(_VersionPrefix)</Version>
+		<Version Condition="$(_VersionPrereleaseName) != ''">$(Version)-$(_VersionPrereleaseName)</Version>
+	</PropertyGroup>
+	<PropertyGroup Label="NuGet-Package">
+		<Authors>$(Company)</Authors>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/RegionOrebroLan/Integration-Service-Primitives/</PackageProjectUrl>
+		<PackageReleaseNotes>https://github.com/RegionOrebroLan/Integration-Service-Primitives/releases/</PackageReleaseNotes>
+		<PackageTags></PackageTags>
+	</PropertyGroup>
+	<Import Project="Build\Build.targets" />
+</Project>
