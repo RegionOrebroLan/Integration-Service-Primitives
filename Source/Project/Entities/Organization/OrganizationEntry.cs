@@ -4,6 +4,8 @@ using RegionOrebroLan.Integration.Service.Entities.Organization.Extensions;
 
 namespace RegionOrebroLan.Integration.Service.Entities.Organization
 {
+	/// <inheritdoc cref="EntryWrapper" />
+	/// <inheritdoc cref="IOrganizationEntry" />
 	public class OrganizationEntry : EntryWrapper, IOrganizationEntry
 	{
 		#region Fields

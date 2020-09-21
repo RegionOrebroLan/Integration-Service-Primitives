@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace RegionOrebroLan.Integration.Service.Entities.Organization
 {
+	/// <inheritdoc />
 	public interface IOrganizationEntry : IIntegrationEntry
 	{
 		#region Properties

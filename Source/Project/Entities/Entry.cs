@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace RegionOrebroLan.Integration.Service.Entities
 {
+	/// <inheritdoc />
 	public class Entry : IEntry
 	{
 		#region Properties

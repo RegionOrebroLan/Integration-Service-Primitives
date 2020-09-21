@@ -3,6 +3,7 @@ using RegionOrebroLan.Integration.Service.Entities.Organization;
 
 namespace RegionOrebroLan.Integration.Service.Queries.Organization
 {
+	/// <inheritdoc cref="Query" />
 	public class OrganizationQuery : Query
 	{
 		#region Properties
