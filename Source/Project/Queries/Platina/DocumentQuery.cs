@@ -8,7 +8,8 @@ namespace RegionOrebroLan.Integration.Service.Queries.Platina
 	{
 		#region Properties
 
-		public virtual DateTime? Confirmed { get; set; }
+		public virtual DateTime? ConfirmedAfter { get; set; }
+		public virtual DateTime? ConfirmedBefore { get; set; }
 		public virtual IList<string> FileExtension { get; } = new List<string>();
 		public virtual IList<string> KeywordIdentities { get; } = new List<string>();
 		public virtual IList<string> Keywords { get; } = new List<string>();
