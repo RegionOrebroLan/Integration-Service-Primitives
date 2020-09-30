@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<_VersionPrefix>0.0.3</_VersionPrefix>
+		<_VersionPrefix>0.0.4</_VersionPrefix>
 		<_VersionPrereleaseName>alpha</_VersionPrereleaseName>
 		<AssemblyName>RegionOrebroLan.Integration.Service.Primitives</AssemblyName>
 		<AssemblyOriginatorKeyFile>$(SolutionDir).Global\Signing\StrongName.snk</AssemblyOriginatorKeyFile>
