@@ -15,9 +15,9 @@ namespace RegionOrebroLan.Integration.Service.Queries
 		public virtual DateTime? CreatedBefore { get; set; }
 
 		[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
-		public virtual Guid? Guid { get; set; }
+		public virtual IList<Guid> Guid { get; } = new List<Guid>();
 
-		public virtual int? Id { get; set; }
+		public virtual IList<int> Id { get; } = new List<int>();
 
 		[SuppressMessage("Naming", "CA1716:Identifiers should not match keywords")]
 		public virtual ConditionalOperator Operator { get; set; } = ConditionalOperator.Or;
@@ -78,11 +78,11 @@ namespace RegionOrebroLan.Integration.Service.Queries
 			if(this.CreatedBefore != null)
 				dictionary.Add(nameof(this.CreatedBefore), new[] {this.CreatedBefore.Value.ToString("o")});
 
-			if(this.Guid != null)
-				dictionary.Add(nameof(this.Guid), new[] {this.Guid.Value.ToString()});
+			if(this.Guid.Any())
+				dictionary.Add(nameof(this.Guid), this.Guid.Select(guid => guid.ToString()));
 
-			if(this.Id != null)
-				dictionary.Add(nameof(this.Id), new[] {this.Id.Value.ToString(CultureInfo.InvariantCulture)});
+			if(this.Id.Any())
+				dictionary.Add(nameof(this.Id), this.Id.Select(id => id.ToString(CultureInfo.InvariantCulture)));
 
 			if(this.Properties.Any())
 				dictionary.Add(nameof(this.Properties), new[] {string.Join(",", this.Properties)});

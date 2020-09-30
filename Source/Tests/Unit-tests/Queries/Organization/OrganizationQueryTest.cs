@@ -22,8 +22,8 @@ namespace UnitTests.Queries.Organization
 			{
 				CreatedAfter = createdAfter,
 				DistinguishedName = {"abc*", "*def", "*ghi*"},
-				Guid = new Guid("f6c5d381-d9f1-458d-a00f-59e6b1e8aba5"),
-				Id = 2,
+				Guid = {new Guid("f6c5d381-d9f1-458d-a00f-59e6b1e8aba5")},
+				Id = {5, 2},
 				Mobile = {"0123-456789"},
 				PostalAddress = {"Street 12", "12345 City"},
 				SavedBefore = savedBefore
@@ -38,7 +38,7 @@ namespace UnitTests.Queries.Organization
 
 			var queryString = organizationQuery.ToQueryString();
 
-			var expected = $"?CreatedAfter={createdAfter.ToUniversalTime().ToString("o", null)}&DistinguishedName=abc*&DistinguishedName=*def&DistinguishedName=*ghi*&Guid=f6c5d381-d9f1-458d-a00f-59e6b1e8aba5&Id=2&Mobile=0123-456789&PostalAddress=Street 12&PostalAddress=12345 City&Properties=Eight,Fifth,First,fourth,ninth,SECOND,seventh,sixth,Tenth,third&SavedBefore={savedBefore.ToString("o", null)}";
+			var expected = $"?CreatedAfter={createdAfter.ToUniversalTime().ToString("o", null)}&DistinguishedName=abc*&DistinguishedName=*def&DistinguishedName=*ghi*&Guid=f6c5d381-d9f1-458d-a00f-59e6b1e8aba5&Id=5&Id=2&Mobile=0123-456789&PostalAddress=Street 12&PostalAddress=12345 City&Properties=Eight,Fifth,First,fourth,ninth,SECOND,seventh,sixth,Tenth,third&SavedBefore={savedBefore.ToString("o", null)}";
 
 			Assert.AreEqual(expected, queryString);
 		}
