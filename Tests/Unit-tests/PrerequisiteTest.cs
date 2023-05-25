@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,6 +29,7 @@ namespace UnitTests
 		}
 
 		[TestMethod]
+		[SuppressMessage("Globalization", "CA1307:Specify StringComparison for clarity", Justification = "StringComparison overload does not exist for net462")]
 		public async Task DateTime_Test()
 		{
 			var localDateTime = await this.CreateDateTimeAsync(DateTimeKind.Local).ConfigureAwait(false);
@@ -52,7 +54,7 @@ namespace UnitTests
 			Assert.AreEqual(DateTimeKind.Local, parsedUtcDateTime.Kind);
 			parsedUtcDateTime = DateTime.ParseExact(utcDateTimeString, "yyyyMMddHHmmssZ", null, DateTimeStyles.RoundtripKind);
 			Assert.AreEqual(DateTimeKind.Utc, parsedUtcDateTime.Kind);
-			parsedUtcDateTime = DateTime.ParseExact(utcDateTimeString.Replace("Z", string.Empty, StringComparison.OrdinalIgnoreCase), "yyyyMMddHHmmss", null, DateTimeStyles.RoundtripKind);
+			parsedUtcDateTime = DateTime.ParseExact(utcDateTimeString.Replace("Z", string.Empty), "yyyyMMddHHmmss", null, DateTimeStyles.RoundtripKind);
 			Assert.AreEqual(DateTimeKind.Unspecified, parsedUtcDateTime.Kind);
 			utcDateTimeString = utcDateTime.ToString("yyyyMMddHHmmss.fffZ", null);
 			Assert.AreEqual("20000205142742.786Z", utcDateTimeString);
@@ -60,7 +62,7 @@ namespace UnitTests
 			Assert.AreEqual(DateTimeKind.Local, parsedUtcDateTime.Kind);
 			parsedUtcDateTime = DateTime.ParseExact(utcDateTimeString, "yyyyMMddHHmmss.fffZ", null, DateTimeStyles.RoundtripKind);
 			Assert.AreEqual(DateTimeKind.Utc, parsedUtcDateTime.Kind);
-			parsedUtcDateTime = DateTime.ParseExact(utcDateTimeString.Replace("Z", string.Empty, StringComparison.OrdinalIgnoreCase), "yyyyMMddHHmmss.fff", null, DateTimeStyles.RoundtripKind);
+			parsedUtcDateTime = DateTime.ParseExact(utcDateTimeString.Replace("Z", string.Empty), "yyyyMMddHHmmss.fff", null, DateTimeStyles.RoundtripKind);
 			Assert.AreEqual(DateTimeKind.Unspecified, parsedUtcDateTime.Kind);
 		}
 
