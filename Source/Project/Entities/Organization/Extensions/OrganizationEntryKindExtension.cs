@@ -12,9 +12,9 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization.Extensions
 		#region Fields
 
 		private static IDictionary<OrganizationEntryKind, string> _kindToObjectClassMap;
-		private static readonly object _kindToObjectClassMapLock = new object();
+		private static readonly object _kindToObjectClassMapLock = new();
 		private static IDictionary<string, OrganizationEntryKind> _objectClassToKindMap;
-		private static readonly object _objectClassToKindMapLock = new object();
+		private static readonly object _objectClassToKindMapLock = new();
 
 		#endregion
 
@@ -82,7 +82,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization.Extensions
 
 		public static OrganizationEntryKind? FromObjectClass(string objectClass)
 		{
-			return ObjectClassToKindMap.TryGetValue(objectClass, out var kind) ? (OrganizationEntryKind?)kind : null;
+			return ObjectClassToKindMap.TryGetValue(objectClass, out var kind) ? kind : null;
 		}
 
 		public static string ToObjectClass(this OrganizationEntryKind organizationEntryKind)

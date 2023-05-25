@@ -10,7 +10,7 @@ namespace RegionOrebroLan.Integration.Service.Queries.Extensions
 	{
 		#region Fields
 
-		private static readonly ConcurrentDictionary<Type, IEnumerable<PropertyInfo>> _stringListPropertiesCache = new ConcurrentDictionary<Type, IEnumerable<PropertyInfo>>();
+		private static readonly ConcurrentDictionary<Type, IEnumerable<PropertyInfo>> _stringListPropertiesCache = new();
 
 		#endregion
 
