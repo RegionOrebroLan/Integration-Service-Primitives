@@ -59,7 +59,7 @@ namespace RegionOrebroLan.Integration.Service.Queries
 
 			foreach(var value in values)
 			{
-				foreach(var part in value.Split(',').Select(part => part.Trim()).Where(part => !string.IsNullOrEmpty(part)))
+				foreach(var part in (value ?? string.Empty).Split(',').Select(part => part.Trim()).Where(part => !string.IsNullOrEmpty(part)))
 				{
 					this.Properties.Add(part);
 				}
