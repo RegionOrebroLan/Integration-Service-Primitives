@@ -1,6 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project>
+	<Import Project="../Directory.Build.props" />
 	<PropertyGroup>
-		<RootNamespace>UnitTests</RootNamespace>
+		<IsPackable>false</IsPackable>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 	</PropertyGroup>
 </Project>

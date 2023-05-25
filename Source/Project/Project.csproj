@@ -1,26 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<_VersionPrefix>0.0.5</_VersionPrefix>
-		<_VersionPrereleaseName>alpha</_VersionPrereleaseName>
 		<AssemblyName>RegionOrebroLan.Integration.Service.Primitives</AssemblyName>
-		<AssemblyOriginatorKeyFile>$(SolutionDir).Global\Signing\StrongName.snk</AssemblyOriginatorKeyFile>
-		<AssemblyVersion>$(_VersionPrefix).0</AssemblyVersion>
-		<Company>Region Örebro län</Company>
+		<AssemblyOriginatorKeyFile>$(SolutionDir)StrongName.snk</AssemblyOriginatorKeyFile>
+		<Authors>Region Örebro län</Authors>
+		<Company>$(Authors)</Company>
 		<Description>Common types for integraion-service and clients, $(Company).</Description>
-		<FileVersion>$(_VersionPrefix).0</FileVersion>
-		<LangVersion>Latest</LangVersion>
-		<RootNamespace>RegionOrebroLan.Integration.Service</RootNamespace>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<Version>$(_VersionPrefix)</Version>
-		<Version Condition="$(_VersionPrereleaseName) != ''">$(Version)-$(_VersionPrereleaseName)</Version>
-	</PropertyGroup>
-	<PropertyGroup Label="NuGet-Package">
-		<Authors>$(Company)</Authors>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/RegionOrebroLan/Integration-Service-Primitives/</PackageProjectUrl>
 		<PackageReleaseNotes>https://github.com/RegionOrebroLan/Integration-Service-Primitives/releases/</PackageReleaseNotes>
 		<PackageTags></PackageTags>
+		<RootNamespace>RegionOrebroLan.Integration.Service</RootNamespace>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<VersionPrefix>0.0.5</VersionPrefix>
+		<VersionSuffix>alpha</VersionSuffix>
 	</PropertyGroup>
-	<Import Project="Build\Build.targets" />
+	<Target Name="HandleAssemblyOriginatorKeyFile" BeforeTargets="BeforeBuild" Condition="$(SignAssembly) AND !Exists('$(AssemblyOriginatorKeyFile)')">
+		<PropertyGroup>
+			<_DevelopmentAssemblyOriginatorKeyFile>$(SolutionDir)StrongName.Development.snk</_DevelopmentAssemblyOriginatorKeyFile>
+		</PropertyGroup>
+		<Warning Text="The strong-name-key-file '$(AssemblyOriginatorKeyFile)' does not exist. The strong-name-key-file '$(_DevelopmentAssemblyOriginatorKeyFile)' is used instead." />
+		<PropertyGroup>
+			<AssemblyOriginatorKeyFile>$(_DevelopmentAssemblyOriginatorKeyFile)</AssemblyOriginatorKeyFile>
+		</PropertyGroup>
+	</Target>
 </Project>
