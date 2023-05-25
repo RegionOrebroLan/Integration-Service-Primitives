@@ -38,7 +38,7 @@ namespace UnitTests.Entities
 		{
 			var entry = await this.CreateEntryAsync().ConfigureAwait(false);
 
-			entry.Properties.Add(nameof(EntryWrapper.Created), new[] {string.Empty});
+			entry.Properties.Add(nameof(EntryWrapper.Created), new[] { string.Empty });
 
 			Assert.AreEqual(1, entry.Properties[nameof(EntryWrapper.Created)].Count());
 			Assert.AreEqual(string.Empty, entry.Properties[nameof(EntryWrapper.Created)].First());
@@ -56,7 +56,7 @@ namespace UnitTests.Entities
 			var now = DateTime.Now;
 			Assert.AreEqual(DateTimeKind.Local, now.Kind);
 
-			entry.Properties.Add(nameof(EntryWrapper.Created), new[] {now.ToString(Defaults.DateTimeFormat, null)});
+			entry.Properties.Add(nameof(EntryWrapper.Created), new[] { now.ToString(Defaults.DateTimeFormat, null) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -75,7 +75,7 @@ namespace UnitTests.Entities
 			var now = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Unspecified);
 			Assert.AreEqual(DateTimeKind.Unspecified, now.Kind);
 
-			entry.Properties.Add(nameof(EntryWrapper.Created), new[] {now.ToString(Defaults.DateTimeAccurateFormat, null)});
+			entry.Properties.Add(nameof(EntryWrapper.Created), new[] { now.ToString(Defaults.DateTimeAccurateFormat, null) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -94,7 +94,7 @@ namespace UnitTests.Entities
 			var now = DateTime.UtcNow;
 			Assert.AreEqual(DateTimeKind.Utc, now.Kind);
 
-			entry.Properties.Add(nameof(EntryWrapper.Created), new[] {now.ToString(Defaults.DateTimeFormat, null)});
+			entry.Properties.Add(nameof(EntryWrapper.Created), new[] { now.ToString(Defaults.DateTimeFormat, null) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -136,7 +136,7 @@ namespace UnitTests.Entities
 
 		protected internal virtual async Task<EntryWrapper> CreateEntryWrapperAsync(IEntry entry)
 		{
-			return await Task.FromResult(new Mock<EntryWrapper>(entry) {CallBase = true}.Object).ConfigureAwait(false);
+			return await Task.FromResult(new Mock<EntryWrapper>(entry) { CallBase = true }.Object).ConfigureAwait(false);
 		}
 
 		[TestMethod]
@@ -144,7 +144,7 @@ namespace UnitTests.Entities
 		{
 			var entry = await this.CreateEntryAsync().ConfigureAwait(false);
 
-			entry.Properties.Add(nameof(EntryWrapper.Disabled), new[] {bool.TrueString});
+			entry.Properties.Add(nameof(EntryWrapper.Disabled), new[] { bool.TrueString });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -158,7 +158,7 @@ namespace UnitTests.Entities
 		{
 			var entry = await this.CreateEntryAsync().ConfigureAwait(false);
 
-			entry.Properties.Add(nameof(EntryWrapper.Disabled), new[] {string.Empty});
+			entry.Properties.Add(nameof(EntryWrapper.Disabled), new[] { string.Empty });
 
 			Assert.AreEqual(1, entry.Properties[nameof(EntryWrapper.Disabled)].Count());
 			Assert.AreEqual(string.Empty, entry.Properties[nameof(EntryWrapper.Disabled)].First());
@@ -187,7 +187,7 @@ namespace UnitTests.Entities
 		{
 			var entry = await this.CreateEntryAsync().ConfigureAwait(false);
 
-			entry.Properties.Add(nameof(EntryWrapper.Id), new[] {string.Empty});
+			entry.Properties.Add(nameof(EntryWrapper.Id), new[] { string.Empty });
 
 			Assert.AreEqual(1, entry.Properties[nameof(EntryWrapper.Id)].Count());
 			Assert.AreEqual(string.Empty, entry.Properties[nameof(EntryWrapper.Id)].First());
@@ -204,7 +204,7 @@ namespace UnitTests.Entities
 
 			var expectedId = 17;
 
-			entry.Properties.Add(nameof(EntryWrapper.Id), new[] {expectedId.ToString(CultureInfo.InvariantCulture)});
+			entry.Properties.Add(nameof(EntryWrapper.Id), new[] { expectedId.ToString(CultureInfo.InvariantCulture) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -244,7 +244,7 @@ namespace UnitTests.Entities
 		{
 			var entry = await this.CreateEntryAsync().ConfigureAwait(false);
 
-			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] {string.Empty});
+			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] { string.Empty });
 
 			Assert.AreEqual(1, entry.Properties[nameof(EntryWrapper.Saved)].Count());
 			Assert.AreEqual(string.Empty, entry.Properties[nameof(EntryWrapper.Saved)].First());
@@ -262,7 +262,7 @@ namespace UnitTests.Entities
 			var now = DateTime.Now;
 			Assert.AreEqual(DateTimeKind.Local, now.Kind);
 
-			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] {now.ToString(Defaults.DateTimeAccurateFormat, null)});
+			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] { now.ToString(Defaults.DateTimeAccurateFormat, null) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -281,7 +281,7 @@ namespace UnitTests.Entities
 			var now = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Unspecified);
 			Assert.AreEqual(DateTimeKind.Unspecified, now.Kind);
 
-			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] {now.ToString(Defaults.DateTimeFormat, null)});
+			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] { now.ToString(Defaults.DateTimeFormat, null) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
@@ -300,7 +300,7 @@ namespace UnitTests.Entities
 			var now = DateTime.UtcNow;
 			Assert.AreEqual(DateTimeKind.Utc, now.Kind);
 
-			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] {now.ToString(Defaults.DateTimeAccurateFormat, null)});
+			entry.Properties.Add(nameof(EntryWrapper.Saved), new[] { now.ToString(Defaults.DateTimeAccurateFormat, null) });
 
 			var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 

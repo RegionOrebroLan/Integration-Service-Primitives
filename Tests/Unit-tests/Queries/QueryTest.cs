@@ -19,7 +19,7 @@ namespace UnitTests.Queries
 
 			var createdAfter = DateTime.Now;
 
-			var query = new Mock<Query> {CallBase = true}.Object;
+			var query = new Mock<Query> { CallBase = true }.Object;
 			query.CreatedAfter = createdAfter;
 			query.Properties.Add("D,b,c,         A , d ,    ,       ,");
 

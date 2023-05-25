@@ -21,11 +21,11 @@ namespace UnitTests.Queries.Organization
 			var organizationQuery = new OrganizationQuery
 			{
 				CreatedAfter = createdAfter,
-				DistinguishedName = {"abc*", "*def", "*ghi*"},
-				Guid = {new Guid("f6c5d381-d9f1-458d-a00f-59e6b1e8aba5")},
-				Id = {5, 2},
-				Mobile = {"0123-456789"},
-				PostalAddress = {"Street 12", "12345 City"},
+				DistinguishedName = { "abc*", "*def", "*ghi*" },
+				Guid = { new Guid("f6c5d381-d9f1-458d-a00f-59e6b1e8aba5") },
+				Id = { 5, 2 },
+				Mobile = { "0123-456789" },
+				PostalAddress = { "Street 12", "12345 City" },
 				SavedBefore = savedBefore
 			};
 

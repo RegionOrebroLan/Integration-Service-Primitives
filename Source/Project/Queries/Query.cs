@@ -73,10 +73,10 @@ namespace RegionOrebroLan.Integration.Service.Queries
 			var dictionary = new SortedDictionary<string, IEnumerable<string>>(StringComparer.OrdinalIgnoreCase);
 
 			if(this.CreatedAfter != null)
-				dictionary.Add(nameof(this.CreatedAfter), new[] {this.CreatedAfter.Value.ToString("o")});
+				dictionary.Add(nameof(this.CreatedAfter), new[] { this.CreatedAfter.Value.ToString("o") });
 
 			if(this.CreatedBefore != null)
-				dictionary.Add(nameof(this.CreatedBefore), new[] {this.CreatedBefore.Value.ToString("o")});
+				dictionary.Add(nameof(this.CreatedBefore), new[] { this.CreatedBefore.Value.ToString("o") });
 
 			if(this.Guid.Any())
 				dictionary.Add(nameof(this.Guid), this.Guid.Select(guid => guid.ToString()));
@@ -85,13 +85,13 @@ namespace RegionOrebroLan.Integration.Service.Queries
 				dictionary.Add(nameof(this.Id), this.Id.Select(id => id.ToString(CultureInfo.InvariantCulture)));
 
 			if(this.Properties.Any())
-				dictionary.Add(nameof(this.Properties), new[] {string.Join(",", this.Properties)});
+				dictionary.Add(nameof(this.Properties), new[] { string.Join(",", this.Properties) });
 
 			if(this.SavedAfter != null)
-				dictionary.Add(nameof(this.SavedAfter), new[] {this.SavedAfter.Value.ToString("o")});
+				dictionary.Add(nameof(this.SavedAfter), new[] { this.SavedAfter.Value.ToString("o") });
 
 			if(this.SavedBefore != null)
-				dictionary.Add(nameof(this.SavedBefore), new[] {this.SavedBefore.Value.ToString("o")});
+				dictionary.Add(nameof(this.SavedBefore), new[] { this.SavedBefore.Value.ToString("o") });
 
 			foreach(var property in this.StringListProperties())
 			{
@@ -110,7 +110,7 @@ namespace RegionOrebroLan.Integration.Service.Queries
 				var values = entry.Value;
 
 				if(entry.Key.Equals(nameof(this.Properties), StringComparison.OrdinalIgnoreCase))
-					values = new[] {string.Join(",", values)};
+					values = new[] { string.Join(",", values) };
 
 				parts.AddRange(values.Select(value => $"{entry.Key}={value}"));
 			}
