@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using RegionOrebroLan.Integration.Service.Entities.Organization;
 
 namespace RegionOrebroLan.Integration.Service.Queries.Organization

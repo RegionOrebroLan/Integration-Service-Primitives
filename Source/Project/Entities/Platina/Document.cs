@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace RegionOrebroLan.Integration.Service.Entities.Platina
 {
 	/// <inheritdoc cref="EntryWrapper" />

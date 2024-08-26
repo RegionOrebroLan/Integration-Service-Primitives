@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace RegionOrebroLan.Integration.Service.Queries.Platina
 {
 	/// <inheritdoc cref="Query" />

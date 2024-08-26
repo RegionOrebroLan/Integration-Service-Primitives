@@ -4,6 +4,7 @@
 		<CheckEolTargetFramework>false</CheckEolTargetFramework>
 		<DelaySign>false</DelaySign>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>latest</LangVersion>
 		<SignAssembly>true</SignAssembly>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>

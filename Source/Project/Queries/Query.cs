@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using RegionOrebroLan.Integration.Service.Queries.Extensions;
 
 namespace RegionOrebroLan.Integration.Service.Queries

@@ -1,4 +1,3 @@
-using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace RegionOrebroLan.Integration.Service.Entities
