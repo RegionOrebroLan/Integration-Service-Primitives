@@ -48,14 +48,14 @@ namespace UnitTests.Entities.Organization
 		{
 			var entry = await this.CreateEntryAsync().ConfigureAwait(false);
 
-			entry.Properties.Add(nameof(OrganizationEntry.EndDate), new[] { string.Empty });
+			entry.Properties.Add(nameof(OrganizationEntry.EndDate), [string.Empty]);
 			Assert.AreEqual(1, entry.Properties[nameof(OrganizationEntry.EndDate)].Count());
 			Assert.AreEqual(string.Empty, entry.Properties[nameof(OrganizationEntry.EndDate)].First());
 			var organizationEntry = new OrganizationEntry(entry);
 			Assert.IsFalse(organizationEntry.EndDate.Any());
 
 			entry.Properties.Clear();
-			entry.Properties.Add(nameof(OrganizationEntry.EndDate), new[] { "20100929220000Z", "20020101000000Z", "20201016215800Z", "20151021083256Z", "20120613163635.183Z", "20200409114750.757Z" });
+			entry.Properties.Add(nameof(OrganizationEntry.EndDate), ["20100929220000Z", "20020101000000Z", "20201016215800Z", "20151021083256Z", "20120613163635.183Z", "20200409114750.757Z"]);
 			organizationEntry = new OrganizationEntry(entry);
 			Assert.AreEqual(6, organizationEntry.EndDate.Count());
 			var dateTime = organizationEntry.EndDate.ElementAt(0);
@@ -69,7 +69,7 @@ namespace UnitTests.Entities.Organization
 			Assert.AreEqual(183, dateTime.Millisecond);
 
 			entry.Properties.Clear();
-			entry.Properties.Add(nameof(OrganizationEntry.EndDate), new[] { "abc", "20020101000000Z", null, "20151021083256Z", string.Empty, "20200409114750.757Z" });
+			entry.Properties.Add(nameof(OrganizationEntry.EndDate), ["abc", "20020101000000Z", null, "20151021083256Z", string.Empty, "20200409114750.757Z"]);
 			organizationEntry = new OrganizationEntry(entry);
 			Assert.AreEqual(3, organizationEntry.EndDate.Count());
 			dateTime = organizationEntry.EndDate.ElementAt(1);
