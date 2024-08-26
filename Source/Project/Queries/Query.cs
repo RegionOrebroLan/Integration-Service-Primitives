@@ -15,9 +15,9 @@ namespace RegionOrebroLan.Integration.Service.Queries
 		public virtual DateTime? CreatedBefore { get; set; }
 
 		[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
-		public virtual IList<Guid> Guid { get; } = new List<Guid>();
+		public virtual IList<Guid> Guid { get; } = [];
 
-		public virtual IList<int> Id { get; } = new List<int>();
+		public virtual IList<int> Id { get; } = [];
 
 		[SuppressMessage("Naming", "CA1716:Identifiers should not match keywords")]
 		public virtual ConditionalOperator Operator { get; set; } = ConditionalOperator.Or;
@@ -95,7 +95,7 @@ namespace RegionOrebroLan.Integration.Service.Queries
 
 			foreach(var property in this.StringListProperties())
 			{
-				var stringList = (IList<string>)property.GetValue(this) ?? new List<string>();
+				var stringList = (IList<string>)property.GetValue(this) ?? [];
 
 				if(!stringList.Any())
 					continue;

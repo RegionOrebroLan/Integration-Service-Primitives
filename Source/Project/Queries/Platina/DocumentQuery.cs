@@ -10,14 +10,14 @@ namespace RegionOrebroLan.Integration.Service.Queries.Platina
 
 		public virtual DateTime? ConfirmedAfter { get; set; }
 		public virtual DateTime? ConfirmedBefore { get; set; }
-		public virtual IList<string> FileExtension { get; } = new List<string>();
-		public virtual IList<string> KeywordIdentities { get; } = new List<string>();
-		public virtual IList<string> Keywords { get; } = new List<string>();
-		public virtual IList<string> Organization { get; } = new List<string>();
-		public virtual IList<string> OrganizationCode { get; } = new List<string>();
-		public virtual IList<string> PdfFileExtension { get; } = new List<string>();
+		public virtual IList<string> FileExtension { get; } = [];
+		public virtual IList<string> KeywordIdentities { get; } = [];
+		public virtual IList<string> Keywords { get; } = [];
+		public virtual IList<string> Organization { get; } = [];
+		public virtual IList<string> OrganizationCode { get; } = [];
+		public virtual IList<string> PdfFileExtension { get; } = [];
 		public virtual int? RevisionNumber { get; set; }
-		public virtual IList<string> Title { get; } = new List<string>();
+		public virtual IList<string> Title { get; } = [];
 
 		#endregion
 	}
