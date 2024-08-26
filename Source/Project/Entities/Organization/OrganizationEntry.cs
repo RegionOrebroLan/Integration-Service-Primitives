@@ -6,7 +6,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 {
 	/// <inheritdoc cref="EntryWrapper" />
 	/// <inheritdoc cref="IOrganizationEntry" />
-	public class OrganizationEntry : EntryWrapper, IOrganizationEntry
+	public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizationEntry
 	{
 		#region Fields
 
@@ -97,12 +97,6 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		private IEnumerable<DateTime> _validNotAfter;
 		private IEnumerable<DateTime> _validNotBefore;
 		private IEnumerable<string> _visitingHours;
-
-		#endregion
-
-		#region Constructors
-
-		public OrganizationEntry(IEntry entry) : base(entry) { }
 
 		#endregion
 

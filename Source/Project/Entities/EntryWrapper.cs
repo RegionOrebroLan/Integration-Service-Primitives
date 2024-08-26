@@ -7,7 +7,7 @@ using RegionOrebroLan.Integration.Service.Configuration;
 
 namespace RegionOrebroLan.Integration.Service.Entities
 {
-	public abstract class EntryWrapper
+	public abstract class EntryWrapper(IEntry entry)
 	{
 		#region Fields
 
@@ -15,15 +15,6 @@ namespace RegionOrebroLan.Integration.Service.Entities
 		private bool? _disabled;
 		private int? _id;
 		private DateTime? _saved;
-
-		#endregion
-
-		#region Constructors
-
-		protected EntryWrapper(IEntry entry)
-		{
-			this.Entry = entry ?? throw new ArgumentNullException(nameof(entry));
-		}
 
 		#endregion
 
@@ -56,7 +47,7 @@ namespace RegionOrebroLan.Integration.Service.Entities
 			}
 		}
 
-		protected internal virtual IEntry Entry { get; }
+		protected internal virtual IEntry Entry { get; } = entry ?? throw new ArgumentNullException(nameof(entry));
 
 		[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
 		public virtual Guid Guid => this.Entry.Guid;

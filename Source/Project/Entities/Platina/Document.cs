@@ -5,7 +5,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Platina
 {
 	/// <inheritdoc cref="EntryWrapper" />
 	/// <inheritdoc cref="IDocument" />
-	public class Document : EntryWrapper, IDocument
+	public class Document(IEntry entry) : EntryWrapper(entry), IDocument
 	{
 		#region Fields
 
@@ -21,12 +21,6 @@ namespace RegionOrebroLan.Integration.Service.Entities.Platina
 		private Lazy<string> _pdfFileExtension;
 		private int? _revisionNumber;
 		private Lazy<string> _title;
-
-		#endregion
-
-		#region Constructors
-
-		public Document(IEntry entry) : base(entry) { }
 
 		#endregion
 
