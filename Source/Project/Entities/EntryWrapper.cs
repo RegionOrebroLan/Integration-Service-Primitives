@@ -146,7 +146,7 @@ namespace RegionOrebroLan.Integration.Service.Entities
 		protected internal virtual IEnumerable<string> GetValues(string propertyName)
 		{
 			if(propertyName == null || !this.Entry.Properties.ContainsKey(propertyName))
-				return Enumerable.Empty<string>();
+				return [];
 
 			return this.Entry.Properties[propertyName];
 		}
