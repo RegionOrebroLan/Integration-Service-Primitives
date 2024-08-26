@@ -48,6 +48,7 @@ namespace RegionOrebroLan.Integration.Service.Queries.Organization
 		public virtual IList<string> HsaTelephoneNumber { get; } = [];
 		public virtual IList<string> HsaTextTelephoneNumber { get; } = [];
 		public virtual IList<string> HsaTitle { get; } = [];
+		public virtual IList<string> HsaVideoPhone { get; } = [];
 		public virtual IList<string> HsaVisitingRuleAge { get; } = [];
 		public virtual IList<string> HsaVisitingRuleReferral { get; } = [];
 		public virtual IList<string> HsaVisitingRules { get; } = [];

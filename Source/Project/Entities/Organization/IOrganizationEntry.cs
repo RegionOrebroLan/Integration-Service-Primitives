@@ -46,6 +46,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		IEnumerable<string> HsaTelephoneNumber { get; }
 		IEnumerable<string> HsaTextTelephoneNumber { get; }
 		IEnumerable<string> HsaTitle { get; }
+		IEnumerable<string> HsaVideoPhone { get; }
 		IEnumerable<string> HsaVisitingRuleAge { get; }
 		IEnumerable<string> HsaVisitingRuleReferral { get; }
 		IEnumerable<string> HsaVisitingRules { get; }

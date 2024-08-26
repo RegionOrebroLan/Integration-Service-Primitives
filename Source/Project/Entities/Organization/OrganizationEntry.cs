@@ -39,6 +39,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		private IEnumerable<string> _hsaTelephoneNumber;
 		private IEnumerable<string> _hsaTextTelephoneNumber;
 		private IEnumerable<string> _hsaTitle;
+		private IEnumerable<string> _hsaVideoPhone;
 		private IEnumerable<string> _hsaVisitingRuleAge;
 		private IEnumerable<string> _hsaVisitingRuleReferral;
 		private IEnumerable<string> _hsaVisitingRules;
@@ -151,6 +152,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization
 		public virtual IEnumerable<string> HsaTelephoneNumber => this._hsaTelephoneNumber ??= this.GetValues(nameof(this.HsaTelephoneNumber));
 		public virtual IEnumerable<string> HsaTextTelephoneNumber => this._hsaTextTelephoneNumber ??= this.GetValues(nameof(this.HsaTextTelephoneNumber));
 		public virtual IEnumerable<string> HsaTitle => this._hsaTitle ??= this.GetValues(nameof(this.HsaTitle));
+		public virtual IEnumerable<string> HsaVideoPhone => this._hsaVideoPhone ??= this.GetValues(nameof(this.HsaVideoPhone));
 		public virtual IEnumerable<string> HsaVisitingRuleAge => this._hsaVisitingRuleAge ??= this.GetValues(nameof(this.HsaVisitingRuleAge));
 		public virtual IEnumerable<string> HsaVisitingRuleReferral => this._hsaVisitingRuleReferral ??= this.GetValues(nameof(this.HsaVisitingRuleReferral));
 		public virtual IEnumerable<string> HsaVisitingRules => this._hsaVisitingRules ??= this.GetValues(nameof(this.HsaVisitingRules));
