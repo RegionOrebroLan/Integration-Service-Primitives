@@ -100,7 +100,7 @@ namespace RegionOrebroLan.Integration.Service.Queries
 				if(!stringList.Any())
 					continue;
 
-				dictionary.Add(property.Name, stringList.ToArray());
+				dictionary.Add(property.Name, [.. stringList]);
 			}
 
 			var parts = new List<string>();
