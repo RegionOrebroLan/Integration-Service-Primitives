@@ -5,7 +5,8 @@
 		<DelaySign>false</DelaySign>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<LangVersion>latest</LangVersion>
+		<!-- LangVersion: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version -->
+		<LangVersion>default</LangVersion>
 		<SignAssembly>true</SignAssembly>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
