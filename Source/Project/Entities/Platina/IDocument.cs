@@ -1,37 +1,36 @@
-namespace RegionOrebroLan.Integration.Service.Entities.Platina
+namespace RegionOrebroLan.Integration.Service.Entities.Platina;
+
+/// <inheritdoc />
+public interface IDocument : IIntegrationEntry
 {
-	/// <inheritdoc />
-	public interface IDocument : IIntegrationEntry
-	{
-		#region Properties
+	#region Properties
 
-		string Category { get; }
+	string Category { get; }
 
-		/// <summary>
-		/// Datetime from Platina, local or UTC not known.
-		/// </summary>
-		DateTime Confirmed { get; }
+	/// <summary>
+	/// Datetime from Platina, local or UTC not known.
+	/// </summary>
+	DateTime Confirmed { get; }
 
-		/// <summary>
-		/// Json-converted byte-array.
-		/// </summary>
-		string File { get; }
+	/// <summary>
+	/// Json-converted byte-array.
+	/// </summary>
+	string File { get; }
 
-		string FileExtension { get; }
-		IEnumerable<string> KeywordIdentities { get; }
-		IEnumerable<string> Keywords { get; }
-		string Organization { get; }
-		string OrganizationCode { get; }
+	string FileExtension { get; }
+	IEnumerable<string> KeywordIdentities { get; }
+	IEnumerable<string> Keywords { get; }
+	string Organization { get; }
+	string OrganizationCode { get; }
 
-		/// <summary>
-		/// Json-converted byte-array.
-		/// </summary>
-		string PdfFile { get; }
+	/// <summary>
+	/// Json-converted byte-array.
+	/// </summary>
+	string PdfFile { get; }
 
-		string PdfFileExtension { get; }
-		int RevisionNumber { get; }
-		string Title { get; }
+	string PdfFileExtension { get; }
+	int RevisionNumber { get; }
+	string Title { get; }
 
-		#endregion
-	}
+	#endregion
 }

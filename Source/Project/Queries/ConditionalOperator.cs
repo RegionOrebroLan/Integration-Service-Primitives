@@ -1,8 +1,7 @@
-namespace RegionOrebroLan.Integration.Service.Queries
+namespace RegionOrebroLan.Integration.Service.Queries;
+
+public enum ConditionalOperator
 {
-	public enum ConditionalOperator
-	{
-		And,
-		Or
-	}
+	And,
+	Or
 }

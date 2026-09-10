@@ -29,6 +29,9 @@ dotnet_diagnostic.IDE0046.severity = none
 dotnet_diagnostic.IDE0055.severity = none
 dotnet_diagnostic.IDE0058.severity = none
 dotnet_diagnostic.IDE0063.severity = none
+dotnet_diagnostic.IDE0160.severity = none
+dotnet_diagnostic.IDE0161.severity = error
 
 # Visual Studio
 csharp_space_after_keywords_in_control_flow_statements = false # Avoid space after if in if-statement. Eg. if() and not if ()
+csharp_style_namespace_declarations = file_scoped:error

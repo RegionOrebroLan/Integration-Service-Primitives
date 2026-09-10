@@ -1,28 +1,27 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace RegionOrebroLan.Integration.Service.Entities
+namespace RegionOrebroLan.Integration.Service.Entities;
+
+public interface IIntegrationEntry
 {
-	public interface IIntegrationEntry
-	{
-		#region Properties
+	#region Properties
 
-		/// <summary>
-		/// Datetime UTC
-		/// </summary>
-		DateTime Created { get; }
+	/// <summary>
+	/// Datetime UTC
+	/// </summary>
+	DateTime Created { get; }
 
-		bool Disabled { get; }
+	bool Disabled { get; }
 
-		[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
-		Guid Guid { get; }
+	[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
+	Guid Guid { get; }
 
-		int Id { get; }
+	int Id { get; }
 
-		/// <summary>
-		/// Datetime UTC
-		/// </summary>
-		DateTime Saved { get; }
+	/// <summary>
+	/// Datetime UTC
+	/// </summary>
+	DateTime Saved { get; }
 
-		#endregion
-	}
+	#endregion
 }
