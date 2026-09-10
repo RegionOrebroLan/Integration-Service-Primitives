@@ -83,12 +83,14 @@ namespace RegionOrebroLan.Integration.Service.Entities
 
 		protected internal virtual IEnumerable<DateTime> GetDateTimes(string propertyName)
 		{
-			return this
-				.GetValues(propertyName)
-				.Select(this.TryParseToDateTime)
-				.Where(dateTime => dateTime != null)
-				.Select(dateTime => dateTime.Value)
-				.ToArray();
+			return
+			[
+				.. this
+					.GetValues(propertyName)
+					.Select(this.TryParseToDateTime)
+					.Where(dateTime => dateTime != null)
+					.Select(dateTime => dateTime.Value)
+			];
 		}
 
 		protected internal virtual bool GetRequiredBoolean(string propertyName)

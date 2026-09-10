@@ -18,7 +18,7 @@ namespace RegionOrebroLan.Integration.Service.Queries.Extensions
 			if(query == null)
 				throw new ArgumentNullException(nameof(query));
 
-			return _stringListPropertiesCache.GetOrAdd(query.GetType(), key => { return key.GetProperties().Where(property => property.PropertyType == typeof(IList<string>)).ToArray(); });
+			return _stringListPropertiesCache.GetOrAdd(query.GetType(), key => { return [.. key.GetProperties().Where(property => property.PropertyType == typeof(IList<string>))]; });
 		}
 
 		#endregion
