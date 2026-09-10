@@ -4,9 +4,13 @@
 		<CheckEolTargetFramework>false</CheckEolTargetFramework>
 		<DelaySign>false</DelaySign>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<!-- Below is a workaround for https://github.com/dotnet/roslyn/issues/41640 -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<!-- LangVersion: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version -->
 		<LangVersion>14.0</LangVersion>
+		<!-- Below is for the same workaround as above. -->
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
 		<SignAssembly>true</SignAssembly>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
