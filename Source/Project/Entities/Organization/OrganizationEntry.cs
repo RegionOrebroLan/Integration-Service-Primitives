@@ -87,7 +87,10 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	private IEnumerable<string> _paTitleName;
 	private IEnumerable<string> _pager;
 	private IEnumerable<string> _postOfficeBox;
+
+	[Obsolete("Use the hsaVisitingAddress* and hsaPostalAddress* attributes instead.", false)]
 	private IEnumerable<string> _postalAddress;
+
 	private IEnumerable<string> _postalCode;
 	private IEnumerable<string> _rbac;
 	private IEnumerable<string> _route;
@@ -97,7 +100,10 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	private IEnumerable<string> _specialityName;
 	private IEnumerable<string> _st;
 	private IEnumerable<DateTime> _startDate;
+
+	[Obsolete("Use the hsaVisitingAddress* and hsaPostalAddress* attributes instead.", false)]
 	private IEnumerable<string> _street;
+
 	private IEnumerable<string> _surgeryHours;
 	private IEnumerable<string> _telephoneHours;
 	private IEnumerable<string> _telephoneNumber;
@@ -234,7 +240,10 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	public virtual IEnumerable<string> PaTitleName => this._paTitleName ??= this.GetValues(nameof(this.PaTitleName));
 	public virtual IEnumerable<string> Pager => this._pager ??= this.GetValues(nameof(this.Pager));
 	public virtual IEnumerable<string> PostOfficeBox => this._postOfficeBox ??= this.GetValues(nameof(this.PostOfficeBox));
+
+	[Obsolete("Use the hsaVisitingAddress* and hsaPostalAddress* attributes instead.", false)]
 	public virtual IEnumerable<string> PostalAddress => this._postalAddress ??= this.GetValues(nameof(this.PostalAddress));
+
 	public virtual IEnumerable<string> PostalCode => this._postalCode ??= this.GetValues(nameof(this.PostalCode));
 	public virtual IEnumerable<string> RBAC => this._rbac ??= this.GetValues(nameof(this.RBAC));
 	public virtual IEnumerable<string> Route => this._route ??= this.GetValues(nameof(this.Route));
@@ -244,7 +253,10 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	public virtual IEnumerable<string> SpecialityName => this._specialityName ??= this.GetValues(nameof(this.SpecialityName));
 	public virtual IEnumerable<string> St => this._st ??= this.GetValues(nameof(this.St));
 	public virtual IEnumerable<DateTime> StartDate => this._startDate ??= this.GetDateTimes(nameof(this.StartDate));
+
+	[Obsolete("Use the hsaVisitingAddress* and hsaPostalAddress* attributes instead.", false)]
 	public virtual IEnumerable<string> Street => this._street ??= this.GetValues(nameof(this.Street));
+
 	public virtual IEnumerable<string> SurgeryHours => this._surgeryHours ??= this.GetValues(nameof(this.SurgeryHours));
 	public virtual IEnumerable<string> TelephoneHours => this._telephoneHours ??= this.GetValues(nameof(this.TelephoneHours));
 	public virtual IEnumerable<string> TelephoneNumber => this._telephoneNumber ??= this.GetValues(nameof(this.TelephoneNumber));

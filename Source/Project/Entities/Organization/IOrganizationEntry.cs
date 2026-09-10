@@ -109,7 +109,10 @@ public interface IOrganizationEntry : IIntegrationEntry
 	IEnumerable<string> PaTitleName { get; }
 	IEnumerable<string> Pager { get; }
 	IEnumerable<string> PostOfficeBox { get; }
+
+	[Obsolete("Use the hsaVisitingAddress* and hsaPostalAddress* attributes instead.", false)]
 	IEnumerable<string> PostalAddress { get; }
+
 	IEnumerable<string> PostalCode { get; }
 	IEnumerable<string> RBAC { get; }
 	IEnumerable<string> Route { get; }
@@ -124,7 +127,10 @@ public interface IOrganizationEntry : IIntegrationEntry
 	IEnumerable<string> SpecialityName { get; }
 	IEnumerable<string> St { get; }
 	IEnumerable<DateTime> StartDate { get; }
+
+	[Obsolete("Use the hsaVisitingAddress* and hsaPostalAddress* attributes instead.", false)]
 	IEnumerable<string> Street { get; }
+
 	IEnumerable<string> SurgeryHours { get; }
 	IEnumerable<string> TelephoneHours { get; }
 	IEnumerable<string> TelephoneNumber { get; }
