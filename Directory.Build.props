@@ -6,7 +6,7 @@
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<!-- LangVersion: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version -->
-		<LangVersion>default</LangVersion>
+		<LangVersion>14.0</LangVersion>
 		<SignAssembly>true</SignAssembly>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
