@@ -28,6 +28,27 @@ public class EntryWrapperTest
 		}
 	}
 
+	protected internal virtual async Task<IEntry> CreateEntryAsync()
+	{
+		return await this.CreateEntryAsync(Guid.NewGuid()).ConfigureAwait(false);
+	}
+
+	[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
+	protected internal virtual async Task<IEntry> CreateEntryAsync(Guid guid)
+	{
+		var entryMock = new Mock<IEntry>();
+
+		entryMock.Setup(entry => entry.Guid).Returns(guid);
+		entryMock.Setup(entry => entry.Properties).Returns(new SortedDictionary<string, IEnumerable<string>>(StringComparer.OrdinalIgnoreCase));
+
+		return await Task.FromResult(entryMock.Object).ConfigureAwait(false);
+	}
+
+	protected internal virtual async Task<EntryWrapper> CreateEntryWrapperAsync(IEntry entry)
+	{
+		return await Task.FromResult(new Mock<EntryWrapper>(entry) { CallBase = true }.Object).ConfigureAwait(false);
+	}
+
 	[TestMethod]
 	[ExpectedException(typeof(InvalidOperationException))]
 	public async Task Created_IfTheCreatedPropertyIsAnEmtpyString_ShouldThrowAnInvalidOperationException()
@@ -112,27 +133,6 @@ public class EntryWrapperTest
 		var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
 
 		_ = entryWrapper.Created;
-	}
-
-	protected internal virtual async Task<IEntry> CreateEntryAsync()
-	{
-		return await this.CreateEntryAsync(Guid.NewGuid()).ConfigureAwait(false);
-	}
-
-	[SuppressMessage("Naming", "CA1720:Identifier contains type name")]
-	protected internal virtual async Task<IEntry> CreateEntryAsync(Guid guid)
-	{
-		var entryMock = new Mock<IEntry>();
-
-		entryMock.Setup(entry => entry.Guid).Returns(guid);
-		entryMock.Setup(entry => entry.Properties).Returns(new SortedDictionary<string, IEnumerable<string>>(StringComparer.OrdinalIgnoreCase));
-
-		return await Task.FromResult(entryMock.Object).ConfigureAwait(false);
-	}
-
-	protected internal virtual async Task<EntryWrapper> CreateEntryWrapperAsync(IEntry entry)
-	{
-		return await Task.FromResult(new Mock<EntryWrapper>(entry) { CallBase = true }.Object).ConfigureAwait(false);
 	}
 
 	[TestMethod]
@@ -223,19 +223,6 @@ public class EntryWrapperTest
 
 	[TestMethod]
 	[ExpectedException(typeof(InvalidOperationException))]
-	public async Task Saved_IfThereIsNoSavedProperty_ShouldThrowAnInvalidOperationException()
-	{
-		var entry = await this.CreateEntryAsync().ConfigureAwait(false);
-
-		Assert.IsFalse(entry.Properties.Any());
-
-		var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
-
-		_ = entryWrapper.Saved;
-	}
-
-	[TestMethod]
-	[ExpectedException(typeof(InvalidOperationException))]
 	public async Task Saved_IfTheSavedPropertyIsAnEmtpyString_ShouldThrowAnInvalidOperationException()
 	{
 		var entry = await this.CreateEntryAsync().ConfigureAwait(false);
@@ -305,6 +292,19 @@ public class EntryWrapperTest
 		Assert.AreEqual(expectedSaved, saved);
 		Assert.AreEqual(DateTimeKind.Utc, expectedSaved.Kind);
 		Assert.AreEqual(DateTimeKind.Utc, saved.Kind);
+	}
+
+	[TestMethod]
+	[ExpectedException(typeof(InvalidOperationException))]
+	public async Task Saved_IfThereIsNoSavedProperty_ShouldThrowAnInvalidOperationException()
+	{
+		var entry = await this.CreateEntryAsync().ConfigureAwait(false);
+
+		Assert.IsFalse(entry.Properties.Any());
+
+		var entryWrapper = await this.CreateEntryWrapperAsync(entry).ConfigureAwait(false);
+
+		_ = entryWrapper.Saved;
 	}
 
 	#endregion

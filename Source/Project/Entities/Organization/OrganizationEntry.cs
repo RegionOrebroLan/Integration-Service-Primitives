@@ -71,11 +71,11 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	private IEnumerable<string> _orgNo;
 	private IEnumerable<string> _ou;
 	private IEnumerable<string> _ouShort;
-	private IEnumerable<string> _pager;
 	private IEnumerable<string> _paTitleName;
+	private IEnumerable<string> _pager;
+	private IEnumerable<string> _postOfficeBox;
 	private IEnumerable<string> _postalAddress;
 	private IEnumerable<string> _postalCode;
-	private IEnumerable<string> _postOfficeBox;
 	private IEnumerable<string> _rbac;
 	private IEnumerable<string> _route;
 	private IEnumerable<string> _seeAlso;
@@ -205,11 +205,11 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	public virtual IEnumerable<string> OrgNo => this._orgNo ??= this.GetValues(nameof(this.OrgNo));
 	public virtual IEnumerable<string> Ou => this._ou ??= this.GetValues(nameof(this.Ou));
 	public virtual IEnumerable<string> OuShort => this._ouShort ??= this.GetValues(nameof(this.OuShort));
-	public virtual IEnumerable<string> Pager => this._pager ??= this.GetValues(nameof(this.Pager));
 	public virtual IEnumerable<string> PaTitleName => this._paTitleName ??= this.GetValues(nameof(this.PaTitleName));
+	public virtual IEnumerable<string> Pager => this._pager ??= this.GetValues(nameof(this.Pager));
+	public virtual IEnumerable<string> PostOfficeBox => this._postOfficeBox ??= this.GetValues(nameof(this.PostOfficeBox));
 	public virtual IEnumerable<string> PostalAddress => this._postalAddress ??= this.GetValues(nameof(this.PostalAddress));
 	public virtual IEnumerable<string> PostalCode => this._postalCode ??= this.GetValues(nameof(this.PostalCode));
-	public virtual IEnumerable<string> PostOfficeBox => this._postOfficeBox ??= this.GetValues(nameof(this.PostOfficeBox));
 	public virtual IEnumerable<string> RBAC => this._rbac ??= this.GetValues(nameof(this.RBAC));
 	public virtual IEnumerable<string> Route => this._route ??= this.GetValues(nameof(this.Route));
 	public virtual IEnumerable<string> SeeAlso => this._seeAlso ??= this.GetValues(nameof(this.SeeAlso));

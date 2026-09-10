@@ -95,11 +95,11 @@ public class OrganizationQuery : Query
 	public virtual IList<string> Ou { get; } = [];
 
 	public virtual IList<string> OuShort { get; } = [];
-	public virtual IList<string> Pager { get; } = [];
 	public virtual IList<string> PaTitleName { get; } = [];
+	public virtual IList<string> Pager { get; } = [];
+	public virtual IList<string> PostOfficeBox { get; } = [];
 	public virtual IList<string> PostalAddress { get; } = [];
 	public virtual IList<string> PostalCode { get; } = [];
-	public virtual IList<string> PostOfficeBox { get; } = [];
 	public virtual IList<string> RBAC { get; } = [];
 	public virtual IList<string> Route { get; } = [];
 	public virtual IList<string> SeeAlso { get; } = [];

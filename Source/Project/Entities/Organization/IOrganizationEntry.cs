@@ -93,11 +93,11 @@ public interface IOrganizationEntry : IIntegrationEntry
 	IEnumerable<string> Ou { get; }
 
 	IEnumerable<string> OuShort { get; }
-	IEnumerable<string> Pager { get; }
 	IEnumerable<string> PaTitleName { get; }
+	IEnumerable<string> Pager { get; }
+	IEnumerable<string> PostOfficeBox { get; }
 	IEnumerable<string> PostalAddress { get; }
 	IEnumerable<string> PostalCode { get; }
-	IEnumerable<string> PostOfficeBox { get; }
 	IEnumerable<string> RBAC { get; }
 	IEnumerable<string> Route { get; }
 	IEnumerable<string> SeeAlso { get; }

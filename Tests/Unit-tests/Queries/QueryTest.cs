@@ -10,34 +10,6 @@ public class QueryTest
 	#region Methods
 
 	[TestMethod]
-	public async Task Resolve_Test()
-	{
-		await Task.CompletedTask.ConfigureAwait(false);
-
-		var createdAfter = DateTime.Now;
-
-		var query = new Mock<Query> { CallBase = true }.Object;
-		query.CreatedAfter = createdAfter;
-		query.Properties.Add("   Foo   ");
-		query.Properties.Add(string.Empty);
-		query.Properties.Add("D,b,c,         A , d ,    ,       ,");
-		query.Properties.Add(null);
-
-		Assert.AreEqual(createdAfter, query.CreatedAfter.Value);
-		Assert.AreEqual(4, query.Properties.Count);
-
-		query.Resolve();
-
-		Assert.AreEqual(createdAfter.ToUniversalTime(), query.CreatedAfter.Value);
-		Assert.AreEqual(5, query.Properties.Count);
-		Assert.AreEqual("A", query.Properties.ElementAt(0));
-		Assert.AreEqual("b", query.Properties.ElementAt(1));
-		Assert.AreEqual("c", query.Properties.ElementAt(2));
-		Assert.AreEqual("D", query.Properties.ElementAt(3));
-		Assert.AreEqual("Foo", query.Properties.ElementAt(4));
-	}
-
-	[TestMethod]
 	public async Task ResolveProperties_IfPropertiesContainsANullValueOrAnEmptyString_ShouldWorkProperly()
 	{
 		await Task.CompletedTask;
@@ -77,6 +49,34 @@ public class QueryTest
 		Assert.AreEqual("fourth", query.Properties.ElementAt(1));
 		Assert.AreEqual("Second", query.Properties.ElementAt(2));
 		Assert.AreEqual("Third", query.Properties.ElementAt(3));
+	}
+
+	[TestMethod]
+	public async Task Resolve_Test()
+	{
+		await Task.CompletedTask.ConfigureAwait(false);
+
+		var createdAfter = DateTime.Now;
+
+		var query = new Mock<Query> { CallBase = true }.Object;
+		query.CreatedAfter = createdAfter;
+		query.Properties.Add("   Foo   ");
+		query.Properties.Add(string.Empty);
+		query.Properties.Add("D,b,c,         A , d ,    ,       ,");
+		query.Properties.Add(null);
+
+		Assert.AreEqual(createdAfter, query.CreatedAfter.Value);
+		Assert.AreEqual(4, query.Properties.Count);
+
+		query.Resolve();
+
+		Assert.AreEqual(createdAfter.ToUniversalTime(), query.CreatedAfter.Value);
+		Assert.AreEqual(5, query.Properties.Count);
+		Assert.AreEqual("A", query.Properties.ElementAt(0));
+		Assert.AreEqual("b", query.Properties.ElementAt(1));
+		Assert.AreEqual("c", query.Properties.ElementAt(2));
+		Assert.AreEqual("D", query.Properties.ElementAt(3));
+		Assert.AreEqual("Foo", query.Properties.ElementAt(4));
 	}
 
 	[TestMethod]
