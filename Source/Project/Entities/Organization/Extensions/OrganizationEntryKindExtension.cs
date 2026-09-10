@@ -8,9 +8,7 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization.Extensions
 	{
 		#region Fields
 
-		private static IDictionary<OrganizationEntryKind, string> _kindToObjectClassMap;
 		private static readonly object _kindToObjectClassMapLock = new();
-		private static IDictionary<string, OrganizationEntryKind> _objectClassToKindMap;
 		private static readonly object _objectClassToKindMapLock = new();
 
 		#endregion
@@ -23,26 +21,26 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization.Extensions
 			get
 			{
 				// ReSharper disable InvertIf
-				if(_kindToObjectClassMap == null)
+				if(field == null)
 				{
 					lock(_kindToObjectClassMapLock)
 					{
-						if(_kindToObjectClassMap == null)
+						if(field == null)
 						{
-							_kindToObjectClassMap = new Dictionary<OrganizationEntryKind, string>();
+							field = new Dictionary<OrganizationEntryKind, string>();
 
 							foreach(var kind in Enum.GetValues(typeof(OrganizationEntryKind)).Cast<OrganizationEntryKind>())
 							{
 								var descriptionAttribute = (DescriptionAttribute)typeof(OrganizationEntryKind).GetField(kind.ToString()).GetCustomAttribute(typeof(DescriptionAttribute));
 
-								_kindToObjectClassMap.Add(kind, descriptionAttribute.Description);
+								field.Add(kind, descriptionAttribute.Description);
 							}
 						}
 					}
 				}
 				// ReSharper restore InvertIf
 
-				return _kindToObjectClassMap;
+				return field;
 			}
 		}
 
@@ -52,24 +50,24 @@ namespace RegionOrebroLan.Integration.Service.Entities.Organization.Extensions
 			get
 			{
 				// ReSharper disable InvertIf
-				if(_objectClassToKindMap == null)
+				if(field == null)
 				{
 					lock(_objectClassToKindMapLock)
 					{
-						if(_objectClassToKindMap == null)
+						if(field == null)
 						{
-							_objectClassToKindMap = new Dictionary<string, OrganizationEntryKind>(StringComparer.OrdinalIgnoreCase);
+							field = new Dictionary<string, OrganizationEntryKind>(StringComparer.OrdinalIgnoreCase);
 
 							foreach(var entry in KindToObjectClassMap)
 							{
-								_objectClassToKindMap.Add(entry.Value, entry.Key);
+								field.Add(entry.Value, entry.Key);
 							}
 						}
 					}
 				}
 				// ReSharper restore InvertIf
 
-				return _objectClassToKindMap;
+				return field;
 			}
 		}
 
