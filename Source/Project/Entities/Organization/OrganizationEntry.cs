@@ -34,12 +34,24 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	private IEnumerable<string> _hsaHealthCareUnitMember;
 	private Lazy<string> _hsaIdentity;
 	private IEnumerable<string> _hsaInvoiceAddress;
+	private IEnumerable<string> _hsaPostalAddress;
+	private IEnumerable<string> _hsaPostalAddressAddressee;
+	private IEnumerable<string> _hsaPostalAddressPostcode;
+	private IEnumerable<string> _hsaPostalAddressPremisesLetter;
+	private IEnumerable<string> _hsaPostalAddressPremisesNumber;
+	private IEnumerable<string> _hsaPostalAddressStreet;
+	private IEnumerable<string> _hsaPostalAddressTown;
 	private IEnumerable<string> _hsaResponsibleHealthCareProvider;
 	private IEnumerable<string> _hsaSwitchboardNumber;
 	private IEnumerable<string> _hsaTelephoneNumber;
 	private IEnumerable<string> _hsaTextTelephoneNumber;
 	private IEnumerable<string> _hsaTitle;
 	private IEnumerable<string> _hsaVideoPhone;
+	private IEnumerable<string> _hsaVisitingAddress;
+	private IEnumerable<string> _hsaVisitingAddressPremisesLetter;
+	private IEnumerable<string> _hsaVisitingAddressPremisesNumber;
+	private IEnumerable<string> _hsaVisitingAddressStreet;
+	private IEnumerable<string> _hsaVisitingAddressTown;
 	private IEnumerable<string> _hsaVisitingRuleAge;
 	private IEnumerable<string> _hsaVisitingRuleReferral;
 	private IEnumerable<string> _hsaVisitingRules;
@@ -48,6 +60,7 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	private IEnumerable<string> _hsaVpwInformation3;
 	private IEnumerable<string> _hsaVpwInformation4;
 	private IEnumerable<string> _hsaVpwNeighbouringObject;
+	private IEnumerable<string> _indoorRouteDescription;
 	private IEnumerable<string> _initials;
 	private Lazy<OrganizationEntryKind?> _kind;
 	private IEnumerable<string> _l;
@@ -147,12 +160,24 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	}
 
 	public virtual IEnumerable<string> HsaInvoiceAddress => this._hsaInvoiceAddress ??= this.GetValues(nameof(this.HsaInvoiceAddress));
+	public virtual IEnumerable<string> HsaPostalAddress => this._hsaPostalAddress ??= this.GetValues(nameof(this.HsaPostalAddress));
+	public virtual IEnumerable<string> HsaPostalAddressAddressee => this._hsaPostalAddressAddressee ??= this.GetValues(nameof(this.HsaPostalAddressAddressee));
+	public virtual IEnumerable<string> HsaPostalAddressPostcode => this._hsaPostalAddressPostcode ??= this.GetValues(nameof(this.HsaPostalAddressPostcode));
+	public virtual IEnumerable<string> HsaPostalAddressPremisesLetter => this._hsaPostalAddressPremisesLetter ??= this.GetValues(nameof(this.HsaPostalAddressPremisesLetter));
+	public virtual IEnumerable<string> HsaPostalAddressPremisesNumber => this._hsaPostalAddressPremisesNumber ??= this.GetValues(nameof(this.HsaPostalAddressPremisesNumber));
+	public virtual IEnumerable<string> HsaPostalAddressStreet => this._hsaPostalAddressStreet ??= this.GetValues(nameof(this.HsaPostalAddressStreet));
+	public virtual IEnumerable<string> HsaPostalAddressTown => this._hsaPostalAddressTown ??= this.GetValues(nameof(this.HsaPostalAddressTown));
 	public virtual IEnumerable<string> HsaResponsibleHealthCareProvider => this._hsaResponsibleHealthCareProvider ??= this.GetValues(nameof(this.HsaResponsibleHealthCareProvider));
 	public virtual IEnumerable<string> HsaSwitchboardNumber => this._hsaSwitchboardNumber ??= this.GetValues(nameof(this.HsaSwitchboardNumber));
 	public virtual IEnumerable<string> HsaTelephoneNumber => this._hsaTelephoneNumber ??= this.GetValues(nameof(this.HsaTelephoneNumber));
 	public virtual IEnumerable<string> HsaTextTelephoneNumber => this._hsaTextTelephoneNumber ??= this.GetValues(nameof(this.HsaTextTelephoneNumber));
 	public virtual IEnumerable<string> HsaTitle => this._hsaTitle ??= this.GetValues(nameof(this.HsaTitle));
 	public virtual IEnumerable<string> HsaVideoPhone => this._hsaVideoPhone ??= this.GetValues(nameof(this.HsaVideoPhone));
+	public virtual IEnumerable<string> HsaVisitingAddress => this._hsaVisitingAddress ??= this.GetValues(nameof(this.HsaVisitingAddress));
+	public virtual IEnumerable<string> HsaVisitingAddressPremisesLetter => this._hsaVisitingAddressPremisesLetter ??= this.GetValues(nameof(this.HsaVisitingAddressPremisesLetter));
+	public virtual IEnumerable<string> HsaVisitingAddressPremisesNumber => this._hsaVisitingAddressPremisesNumber ??= this.GetValues(nameof(this.HsaVisitingAddressPremisesNumber));
+	public virtual IEnumerable<string> HsaVisitingAddressStreet => this._hsaVisitingAddressStreet ??= this.GetValues(nameof(this.HsaVisitingAddressStreet));
+	public virtual IEnumerable<string> HsaVisitingAddressTown => this._hsaVisitingAddressTown ??= this.GetValues(nameof(this.HsaVisitingAddressTown));
 	public virtual IEnumerable<string> HsaVisitingRuleAge => this._hsaVisitingRuleAge ??= this.GetValues(nameof(this.HsaVisitingRuleAge));
 	public virtual IEnumerable<string> HsaVisitingRuleReferral => this._hsaVisitingRuleReferral ??= this.GetValues(nameof(this.HsaVisitingRuleReferral));
 	public virtual IEnumerable<string> HsaVisitingRules => this._hsaVisitingRules ??= this.GetValues(nameof(this.HsaVisitingRules));
@@ -161,6 +186,7 @@ public class OrganizationEntry(IEntry entry) : EntryWrapper(entry), IOrganizatio
 	public virtual IEnumerable<string> HsaVpwInformation3 => this._hsaVpwInformation3 ??= this.GetValues(nameof(this.HsaVpwInformation3));
 	public virtual IEnumerable<string> HsaVpwInformation4 => this._hsaVpwInformation4 ??= this.GetValues(nameof(this.HsaVpwInformation4));
 	public virtual IEnumerable<string> HsaVpwNeighbouringObject => this._hsaVpwNeighbouringObject ??= this.GetValues(nameof(this.HsaVpwNeighbouringObject));
+	public virtual IEnumerable<string> IndoorRouteDescription => this._indoorRouteDescription ??= this.GetValues(nameof(this.IndoorRouteDescription));
 	public virtual IEnumerable<string> Initials => this._initials ??= this.GetValues(nameof(this.Initials));
 
 	public virtual OrganizationEntryKind? Kind

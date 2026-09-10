@@ -41,12 +41,24 @@ public interface IOrganizationEntry : IIntegrationEntry
 	IEnumerable<string> HsaHealthCareUnitMember { get; }
 	string HsaIdentity { get; }
 	IEnumerable<string> HsaInvoiceAddress { get; }
+	IEnumerable<string> HsaPostalAddress { get; }
+	IEnumerable<string> HsaPostalAddressAddressee { get; }
+	IEnumerable<string> HsaPostalAddressPostcode { get; }
+	IEnumerable<string> HsaPostalAddressPremisesLetter { get; }
+	IEnumerable<string> HsaPostalAddressPremisesNumber { get; }
+	IEnumerable<string> HsaPostalAddressStreet { get; }
+	IEnumerable<string> HsaPostalAddressTown { get; }
 	IEnumerable<string> HsaResponsibleHealthCareProvider { get; }
 	IEnumerable<string> HsaSwitchboardNumber { get; }
 	IEnumerable<string> HsaTelephoneNumber { get; }
 	IEnumerable<string> HsaTextTelephoneNumber { get; }
 	IEnumerable<string> HsaTitle { get; }
 	IEnumerable<string> HsaVideoPhone { get; }
+	IEnumerable<string> HsaVisitingAddress { get; }
+	IEnumerable<string> HsaVisitingAddressPremisesLetter { get; }
+	IEnumerable<string> HsaVisitingAddressPremisesNumber { get; }
+	IEnumerable<string> HsaVisitingAddressStreet { get; }
+	IEnumerable<string> HsaVisitingAddressTown { get; }
 	IEnumerable<string> HsaVisitingRuleAge { get; }
 	IEnumerable<string> HsaVisitingRuleReferral { get; }
 	IEnumerable<string> HsaVisitingRules { get; }
@@ -55,6 +67,7 @@ public interface IOrganizationEntry : IIntegrationEntry
 	IEnumerable<string> HsaVpwInformation3 { get; }
 	IEnumerable<string> HsaVpwInformation4 { get; }
 	IEnumerable<string> HsaVpwNeighbouringObject { get; }
+	IEnumerable<string> IndoorRouteDescription { get; }
 	IEnumerable<string> Initials { get; }
 	OrganizationEntryKind? Kind { get; }
 
