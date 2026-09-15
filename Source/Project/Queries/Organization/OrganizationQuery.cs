@@ -43,12 +43,24 @@ public class OrganizationQuery : Query
 	public virtual IList<string> HsaHealthCareUnitMember { get; } = [];
 	public virtual IList<string> HsaIdentity { get; } = [];
 	public virtual IList<string> HsaInvoiceAddress { get; } = [];
+	public virtual IList<string> HsaPostalAddress { get; } = [];
+	public virtual IList<string> HsaPostalAddressAddressee { get; } = [];
+	public virtual IList<string> HsaPostalAddressPostcode { get; } = [];
+	public virtual IList<string> HsaPostalAddressPremisesLetter { get; } = [];
+	public virtual IList<string> HsaPostalAddressPremisesNumber { get; } = [];
+	public virtual IList<string> HsaPostalAddressStreet { get; } = [];
+	public virtual IList<string> HsaPostalAddressTown { get; } = [];
 	public virtual IList<string> HsaResponsibleHealthCareProvider { get; } = [];
 	public virtual IList<string> HsaSwitchboardNumber { get; } = [];
 	public virtual IList<string> HsaTelephoneNumber { get; } = [];
 	public virtual IList<string> HsaTextTelephoneNumber { get; } = [];
 	public virtual IList<string> HsaTitle { get; } = [];
 	public virtual IList<string> HsaVideoPhone { get; } = [];
+	public virtual IList<string> HsaVisitingAddress { get; } = [];
+	public virtual IList<string> HsaVisitingAddressPremisesLetter { get; } = [];
+	public virtual IList<string> HsaVisitingAddressPremisesNumber { get; } = [];
+	public virtual IList<string> HsaVisitingAddressStreet { get; } = [];
+	public virtual IList<string> HsaVisitingAddressTown { get; } = [];
 	public virtual IList<string> HsaVisitingRuleAge { get; } = [];
 	public virtual IList<string> HsaVisitingRuleReferral { get; } = [];
 	public virtual IList<string> HsaVisitingRules { get; } = [];
@@ -57,6 +69,7 @@ public class OrganizationQuery : Query
 	public virtual IList<string> HsaVpwInformation3 { get; } = [];
 	public virtual IList<string> HsaVpwInformation4 { get; } = [];
 	public virtual IList<string> HsaVpwNeighbouringObject { get; } = [];
+	public virtual IList<string> IndoorRouteDescription { get; } = [];
 	public virtual IList<string> Initials { get; } = [];
 	public virtual ISet<OrganizationEntryKind> Kind { get; } = new SortedSet<OrganizationEntryKind>();
 

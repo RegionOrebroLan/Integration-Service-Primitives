@@ -14,7 +14,7 @@ public class QueryExtensionTest
 	{
 		await Task.CompletedTask.ConfigureAwait(false);
 		var organizationQuery = new OrganizationQuery();
-		Assert.AreEqual(87, organizationQuery.StringListProperties().Count());
+		Assert.AreEqual(100, organizationQuery.StringListProperties().Count());
 	}
 
 	#endregion
