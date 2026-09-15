@@ -111,7 +111,10 @@ public class OrganizationQuery : Query
 	public virtual IList<string> PaTitleName { get; } = [];
 	public virtual IList<string> Pager { get; } = [];
 	public virtual IList<string> PostOfficeBox { get; } = [];
+
+	[Obsolete("Will be removed in the future. Use the HsaVisitingAddress* and HsaPostalAddress* properties instead.", false)]
 	public virtual IList<string> PostalAddress { get; } = [];
+
 	public virtual IList<string> PostalCode { get; } = [];
 	public virtual IList<string> RBAC { get; } = [];
 	public virtual IList<string> Route { get; } = [];
@@ -126,7 +129,10 @@ public class OrganizationQuery : Query
 	public virtual IList<string> SpecialityName { get; } = [];
 	public virtual IList<string> St { get; } = [];
 	public virtual IList<string> StartDate { get; } = [];
+
+	[Obsolete("Will be removed in the future. Use the HsaVisitingAddress* and HsaPostalAddress* properties instead.", false)]
 	public virtual IList<string> Street { get; } = [];
+
 	public virtual IList<string> SurgeryHours { get; } = [];
 	public virtual IList<string> TelephoneHours { get; } = [];
 	public virtual IList<string> TelephoneNumber { get; } = [];
